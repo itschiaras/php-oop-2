@@ -20,43 +20,31 @@ include __DIR__ . '/data/db.php';
     <header class="container pt-5">
         <h1>My PetShop</h1>
     </header>
-    <main class="pt-3 pb-5">
-        <div class="container">
-            <div class="row">
-                <?php foreach ($products as $product) { ?>
-                    <div class="col-4 gy-4">
-                        <div class="card h-100">
-                            <div class="position-relative h-100">
-                                <img src=<?php echo "'$product->image'" ?> alt="" class="h-100 card-img-top">
-                                <p class="position-absolute top-0 end-0 m-4 rounded-circle d-flex justify-content-center align-items-center">
-                                    <?php if ($product->category == 'cat') : ?>
-                                        <i class="fa-solid fa-cat fs-3 p-2 rounded-circle"></i>
-                                    <?php elseif ($product->category == 'dog') : ?>
-                                        <i class="fa-solid fa-dog fs-3 p-2 rounded-circle"></i>
-                                    <?php else : ?>
-                                        <i class="fa-solid fa-paw fs-3 p-2 rounded-circle "></i>
-                                    <?php endif; ?>
-                                </p>
+    <main class="pt-3">
+    <div class="container">
+                <div class="row">
+                    <?php foreach($products as $product){ ?> 
+                    <div class="col-4 gy-3">
+                        <div class="card position-relative">
+                            <div class="position-absolute mt-3 me-3 end-0"><?php echo $product->category->icon ?></div>
+                            <div class="img-box">
+                            <img src="<?php echo $product->image ?>" class="img-fluid p-3" alt="<?php echo $product->name ?>">
                             </div>
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
-                                <h4 class="card-title w-75"> <?php echo $product->name ?></h4>
-                                <p class="fs-3"> <?php echo $product->price ?></p>
+                                <h4 class="card-title"><?php echo $product->name ?></h4>
+                                <p class="fs-3"><?php echo "{$product->price}&euro;" ?></p>
                                 </div>
-                                <p>
-                                <?php if(property_exists($product, 'type')) : ?>
-                                    Categoria: <?php echo $product->type ?>
-                                    <?php else : ?>
-                                    Categoria: Altro
-                                    <?php endif; ?>
-                                </p>
-                                
+                                <div class="card-text">
+                                Categoria: <?php echo "{$product->type}";?>
                             </div>
+                            </div>
+                           
                         </div>
                     </div>
-                <?php } ?>
+                    <?php } ?>
+                </div>
             </div>
-        </div>
     </main>
 </body>
 
