@@ -4,7 +4,7 @@ class Product {
     public $name;
     public $price;
     public $image;
-    public $category = 'Prodotto';
+    public $category = 'miscellaneous';
 
     public function __construct($name, $price, $image)
     {
