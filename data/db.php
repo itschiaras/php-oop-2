@@ -26,3 +26,9 @@ $products =
     new Product('Trasportino bordeaux e grigio', $miscellaneous, 30, 'https://arcaplanet.vtexassets.com/arquivos/ids/278512-1800-1800/united-pets-trasportino-auto-bordeaux-grigio.jpg?v=1770510128&quality=1&width=1800&height=1800')
 
 ];
+
+try {
+    $products[3]->setWeigth(1000, 'g');
+} catch (Exception $e){
+    echo 'Eccezione: '.$e->getMessage();
+}
