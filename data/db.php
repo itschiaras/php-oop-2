@@ -27,8 +27,8 @@ $products =
 
 ];
 
-try {
-    $products[3]->setWeigth(1000, 'g');
-} catch (Exception $e){
-    echo 'Eccezione: '.$e->getMessage();
-}
+// try {
+//     $products[3]->setWeigth(1000, 'g');
+// } catch (Exception $e){
+//     echo 'Eccezione: '.$e->getMessage();
+// }
